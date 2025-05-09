@@ -33,7 +33,7 @@ const Accommodation = () => {
                 <>
                     <div>
                         <h3 className="fw-bold mb-4">
-                            <span className="border-bottom border-3 border-primary pb-1">ที่พักยอดนิยม</span>
+                            <span className="border-bottom border-3 border-primary pb-1">ห้องพักพักยอดนิยม</span>
                         </h3>
                     </div>
                     {accommodations.length > 0 ? (

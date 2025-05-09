@@ -1,0 +1,44 @@
+.banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 60px 20px;
+  background-image: url('src\\assets\\facilities2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.banner {
+  width: 100%;
+  padding: 30px 20px;
+  border-radius: 12px;
+  background-color: aliceblue;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+  text-align: center;
+}
+
+.banner h1,
+.banner h2 {
+  font-size: 2rem;
+  color: black;
+  margin: 0.5rem 0;
+}
+
+.search-bar-box {
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}

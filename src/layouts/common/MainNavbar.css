@@ -1,0 +1,97 @@
+.main-navbar {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar-logo img {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navbar-links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-left,
+.nav-right {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-left a,
+.nav-right a,
+.nav-right span {
+    text-decoration: none;
+    color: #333;
+}
+
+.btn-primary {
+    padding: 0.4rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btn-outline {
+    padding: 0.4rem 1rem;
+    border: 1px solid #007bff;
+    color: #007bff;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        padding: 1rem;
+    }
+
+    .menu-toggle:checked + .hamburger + .navbar-links {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

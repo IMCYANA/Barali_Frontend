@@ -1,68 +1,39 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import './MainNavbar.css'; // ไฟล์ CSS ที่คุณจะสร้าง
 
 const MainNavbar = ({ isUser, logOut }) => {
     return (
-        <Navbar expand="lg" bg="primary" data-bs-theme="dark">
-            <Container>
-                <Navbar.Brand as={Link} to="/">
-                    <img
-                        src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
-                        alt="Bootstrap"
-                        width="30"
-                        height="24"
-                        className="d-inline-block align-text-top"
-                    />
-                    {' '}BARALI
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/link">Link</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="/action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/action/3.2">
-                                Another action
-                            </NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item as={Link} to="/action/3.4">
-                                Separated link
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                    <Nav>
+        <nav className="main-navbar">
+            <div className="navbar-container">
+                <Link to="/" className="navbar-logo">
+                    <img src="/src/assets/logo.png" alt="Barali Logo" width="60" height="40" />
+                </Link>
+                <input type="checkbox" id="menu-toggle" className="menu-toggle" />
+                <label htmlFor="menu-toggle" className="hamburger">&#9776;</label>
+
+                <div className="navbar-links">
+                    <ul className="nav-left">
+                        <li><Link to="/">หน้าแรก</Link></li>
+                        <li><Link to="/villas">วิลลา</Link></li>
+                        <li><Link to="/location">โลเคชั่น</Link></li>
+                        <li><Link to="/offers">ข้อเสนอพิเศษ</Link></li>
+                    </ul>
+
+                    <ul className="nav-right">
+                        <li><Link to="/help">ช่วยเหลือ</Link></li>
                         {isUser ? (
-                            <div className="d-flex align-items-center gap-3">
-                                <Navbar.Text className="text-light">
-                                    <span className="fw-bold">{isUser.name} {isUser.lastname}</span>
-                                </Navbar.Text>
-                                <Button 
-                                    variant="outline-light" 
-                                    as={Link} 
-                                    onClick={logOut}
-                                    to="/"
-                                    className="px-3"
-                                >
-                                    ออกจากระบบ
-                                </Button>
-                            </div>
+                            <li className="user-section">
+                                <span>สวัสดี, <strong>{isUser.name} {isUser.lastname}</strong></span>
+                                <button className="btn-outline" onClick={logOut}>ออกจากระบบ</button>
+                            </li>
                         ) : (
-                            <div className="d-flex gap-2">
-                                <Button variant="outline-light" as={Link} to="/login">เข้าสู่ระบบ</Button>
-                                <Button variant="light" as={Link} to="/register">สมัครสมาชิก</Button>
-                            </div>
+                            <li><Link to="/login" className="btn-primary">เข้าสู่ระบบ</Link></li>
                         )}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    )
-}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    );
+};
 
 export default MainNavbar;
